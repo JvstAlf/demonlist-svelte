@@ -1,0 +1,30 @@
+:root {
+  --blue-gradient: linear-gradient(#0065FD, #002E73);
+}
+
+@font-face {
+    font-family: 'Pusab';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pusab'), url('https://fonts.cdnfonts.com/s/364/PUSAB___.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pusab';
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-image: var(--blue-gradient);
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  padding: 1rem;
+  font-family: 'Pusab';
+}
