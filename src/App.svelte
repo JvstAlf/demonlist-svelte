@@ -15,7 +15,7 @@
 {#if routerState.currentRoute === '/'}
   <List {demons} />
 {:else if routerState.position !== null}
-  <LevelDetails position={routerState.position} />
+  <LevelDetails />
 {:else}
   <p>Page not found</p>
 {/if}
