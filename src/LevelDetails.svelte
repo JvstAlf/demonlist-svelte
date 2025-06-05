@@ -1,6 +1,7 @@
 <script>
   import Navbar from './lib/navbar.svelte';
-  import like from './assets/like.png'; import download from './assets/download.png'; import song from './assets/song.png'; import time from './assets/time.png';
+  import like from './assets/like.png'; import download from './assets/download.png'; import song from './assets/song.png'; import time from './assets/time.png'; import youtube from './assets/youtube.png'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
   let position = $state()
   let demon = $state(null);
@@ -123,11 +124,19 @@
       </div>
       <div>
         <p>Points</p>
+        {#if points[offset]}
         <p>{points[offset]}</p>
+        {:else}
+        <p>Legacy</p>
+        {/if}
       </div>
       <div>
         <p>Points ({demon.requirement}%)</p>
+        {#if points[offset]}
         <p>{(Number(points[offset]) / 10).toFixed(2)}</p>
+        {:else}
+        <p>Legacy</p>
+        {/if}
       </div>
     </div>
 
@@ -142,6 +151,39 @@
             </a>
         </div>
         </div>
+    </div>
+
+    <div class="records">
+
+{#if fullLevelData.records.length > 0}
+<table>
+  <thead>
+    <tr>
+      <th>Player Name</th>
+      <th>Progress</th>
+      <th>Video</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {#each fullLevelData.records as record}
+      <tr>
+        <td><span class="fi fi-{record.nationality?.country_code.toLowerCase() ?? ''}"></span> {record.player?.name ?? 'N/A'}</td>
+        <td>{record.progress ?? 'N/A'}%</td>
+        <td>
+          {#if record.video}
+            <a href={record.video} target="_blank" rel="noopener noreferrer"><img src={youtube} style="height: 40px;" alt="yt"></a>
+          {:else}
+            N/A
+          {/if}
+        </td>
+      </tr>
+    {/each}
+  </tbody>
+</table>
+{:else}
+<p>No records yet!</p>
+{/if}
     </div>
 
   </main>
@@ -347,4 +389,39 @@ iframe {
     -webkit-background-clip: text;
     font-size: 120%;
 }
+
+.records {
+  width: 80%;
+  padding: 1rem;
+  background-color: #001f4e;
+  border-radius: 1rem;
+}
+
+.records p {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+table {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem;
+  -webkit-text-stroke: 1px black;
+}
+
+table th {
+  padding: 0.5rem;
+  background-color: #001535;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
+
+table td {
+  padding: 0.25rem;
+  text-align: center;
+  background-color: #002f75;
+  border-radius: 0.5rem;
+}
+
 </style>

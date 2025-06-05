@@ -9,15 +9,19 @@
   function openLevel(url) {
     navigateTo(url)
   }
+  function copy(id) {
+    navigator.clipboard.writeText(id)
+    alert(`copied ID: ${id}`)
+  }
 </script>
 
-<section class={even} onclick={() => openLevel(`/level/${demon.position}`)}>
+<section class={even}>
   <a href={demon.video} target="_blank"><img src={demon.thumbnail} alt="thumbnail" /></a>
   <div class="info">
     <div id="thumbnail" style="background-image: url({thumbnailUrl + demon.level_id});"></div>
-    <p class="name">{demon.position} - {demon.name}</p>
-    <p class="author gold-text">by {demon.publisher.name}</p>
-    <p class="id gold-text">{demon.level_id}</p>
+    <p class="name" onclick={() => openLevel(`/level/${demon.position}`)}>{demon.position} - {demon.name}</p>
+    <p class="author gold-text" onclick={() => openLevel(`/level/${demon.position}`)}>by {demon.publisher.name}</p>
+    <p class="id gold-text" onclick={() => copy(demon.level_id)}>{demon.level_id}</p>
   </div>
 </section>
 
@@ -57,6 +61,10 @@
     background-size: cover;
     background-position: center center;
     border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  section img:hover {
+    opacity: 0.8;
   }
 
   .name {

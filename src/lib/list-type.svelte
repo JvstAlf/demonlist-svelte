@@ -2,12 +2,25 @@
     import MainList from '../assets/main-list.png'
     import ExtendedList from '../assets/extended-list.png'
     import LegacyList from '../assets/legacy-list.png'
+    import { api } from './apiStore.js';
+
+  function setMain() {
+    api.set('https://pointercrate.com/api/v2/demons/listed/?limit=75');
+  }
+
+  function setExtended() {
+    api.set('https://pointercrate.com/api/v2/demons/listed/?limit=75&after=75');
+  }
+
+  function setLegacy() {
+    api.set('combined-last-link');
+  }
 </script>
 
 <div>
-    <img src={MainList} alt="Main List">
-    <img src={ExtendedList} alt="Extended List">
-    <img src={LegacyList} alt="Legacy List">
+    <img src={MainList} alt="Main List" onclick={setMain}>
+    <img src={ExtendedList} alt="Extended List" onclick={setExtended}>
+    <img src={LegacyList} alt="Legacy List" onclick={setLegacy}>
 </div>
 
 <style>
