@@ -465,13 +465,17 @@ table img {
 
 @media screen and (orientation: portrait) {
     .title h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: normal;
   }
   
   .title a {
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 0 1rem;
+}
+
+.title {
+width: 90%
 }
 
   h2 {
