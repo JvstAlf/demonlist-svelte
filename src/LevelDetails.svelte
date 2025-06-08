@@ -536,5 +536,32 @@ iframe {
   align-items: center;
   justify-content: center;
 }
+
+abbr {
+    text-underline-offset: 4px;
+    content: '';
+}
+
+abbr:hover::after {
+    content: attr(data-creators);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 50;
+    padding: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    font-size: 1rem;
+    color: #ffc229;
+    -webkit-text-fill-color: #ffc229;
+    text-wrap: stable;
+    width: 75vw;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: rgba(0, 32, 80, 0.5);
+}
 }
 </style>
