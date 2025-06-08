@@ -360,8 +360,9 @@ iframe {
 .level-details {
   width: 70%;
   display: flex;
-  padding: 1rem;
+  padding: 0.75rem;
   margin-top: 2rem;
+  gap: 0.5rem;
   border-radius: 1rem;
   background-color: #00255c;
   justify-content: space-evenly;
@@ -376,6 +377,7 @@ iframe {
   border-radius: 1rem;
   align-items: center;
   gap: 0.5rem;
+  text-align: center;
 }
 
 .level-details div p:last-child {
@@ -388,6 +390,7 @@ iframe {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-size: 120%;
+    text-align: center;
 }
 
 .records {
@@ -424,4 +427,112 @@ table td {
   border-radius: 0.5rem;
 }
 
+@media screen and (max-width: 1080px) {
+  .title h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .level-details {
+  padding: 0.5em;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.level-info div div {
+  font-size: 1.25rem;
+  word-wrap: break-word;
+}
+
+table {
+  font-size: 1.25rem;
+}
+
+table th {
+  font-size: 1.5rem;
+}
+
+table img {
+  height: 32px !important;
+}
+}
+
+@media screen and (orientation: portrait) {
+    .title h1 {
+    font-size: 3rem;
+    letter-spacing: normal;
+  }
+  
+  .title a {
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .level-details {
+  padding: 0.5em;
+  margin: 2rem 0;
+  gap: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.level-info {
+  display: none;
+}
+
+
+table {
+  font-size: 0.8rem;
+  overflow: scroll;
+  table-layout: fixed;
+  width: 100%;
+  -webkit-text-stroke: 0.25px black;
+}
+
+.records {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.records p {
+  font-size: 1.5rem;
+}
+
+table th {
+  font-size: 1rem;
+}
+
+table img {
+  height: 24px !important;
+}
+
+.description {
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+main {
+  width: 100%;
+  padding: 1rem;
+}
+
+iframe {
+  width: 100%;
+}
+
+.level-details div {
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+}
 </style>

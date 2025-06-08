@@ -9,7 +9,7 @@
     <img src={Icon} alt="Icon">
     <ul>
         <li><a href="../../"><img src={ListImg} alt="List"></a></li>
-        <li><img src={StatsImg} alt="Stats"></li>
+        <li><a href="../../stats/index.html"><img src={StatsImg} alt="Stats"></a></li>
         <li><a href="../../user/index.html"><img src={UserImg} alt="User"></a></li>
     </ul>
 </navbar>
@@ -40,5 +40,41 @@
     navbar ul li img, navbar ul li {
         height: 90%;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 1440px) {
+        navbar, navbar ul {
+            height: 5rem;
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        navbar, navbar ul {
+            height: 4rem;
+        }
+    }
+    
+    @media screen and (orientation: portrait) {
+        navbar {
+            width: 100%;
+            padding: 0;
+        }
+
+        navbar ul {
+            width: 100%;
+            gap: 1rem;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            height: 100%;
+        }
+
+        navbar ul li {
+            height: 80%;
+        }
+
+        navbar ul li img {
+            height: 80%;
+        }
     }
 </style>

@@ -2,7 +2,7 @@
   import Navbar from './lib/navbar.svelte';
   import ListType from './lib/list-type.svelte';
   import Level from './lib/level.svelte';
-  import Logo from './assets/logo.png';
+  import Logo from './assets/logo.png'
 
   let { demons } = $props();
   let search = $state('')
@@ -10,6 +10,7 @@
 </script>
 
 <main>
+
   <Navbar />
   <img src={Logo} alt="Demonlist" class="logo" />
   <ListType />
@@ -46,6 +47,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   input {
@@ -69,4 +71,25 @@
     border: none;
     outline: none;
   }
+
+  @media screen and (orientation: portrait) {
+    .list {
+      border: 1rem solid;
+    border-image: url('./assets/brownbox.png') 10% round;
+    background-color: #995533;
+    background-size: cover;
+    background-clip: padding-box;
+    background-origin: border-box;
+    }
+
+    .logo {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    input {
+      font-size: 1.25rem;
+    }
+  }
+
 </style>

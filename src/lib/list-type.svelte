@@ -46,4 +46,28 @@
     div img:hover {
         scale: 1.05;
     }
+
+    @media screen and (max-width: 1440px) {
+      div {
+        height: 5rem;
+      }
+    }
+
+    @media screen and (max-width: 1080px) {
+      div {
+        height: 4rem;
+        padding: 0;
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      div img {
+        height: 80%;
+      }
+      div {
+        display: flex;
+        align-items: center;
+      }
+    }
+
 </style>

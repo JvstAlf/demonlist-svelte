@@ -1,17 +1,22 @@
 <script>
   import { navigateTo } from './router.svelte.js';
+  import Copy from './copy.svelte'
 
   let { demon, even } = $props();
   let thumbnailUrl = 'https://levelthumbs.prevter.me/thumbnail/'
-  function openUrl(link) {
-    window.open(link)
-  }
+  let visible = $state(false)
+
   function openLevel(url) {
     navigateTo(url)
   }
   function copy(id) {
     navigator.clipboard.writeText(id)
-    alert(`copied ID: ${id}`)
+    visible = true
+    console.log(visible)
+    setTimeout(() => {
+      visible = false
+      console.log(visible)
+    }, 2000);
   }
 </script>
 
@@ -24,6 +29,10 @@
     <p class="id gold-text" onclick={() => copy(demon.level_id)}>{demon.level_id}</p>
   </div>
 </section>
+
+{#if visible}
+<Copy />
+{/if}
 
 <style>
   section {
@@ -114,5 +123,68 @@
 
 .even {
   background-color: rgb(193, 116, 63);
+}
+
+@media screen and (max-width: 1440px) {
+  .name {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .name {
+    font-size: 2.5rem;
+  }
+  .author {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #thumbnail {
+    display: none;
+  }
+
+  .info {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    align-items: center !important;
+  }
+
+  .name {
+    font-size: 2rem;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  .author {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  section img {
+    width: 80%;
+  }
+
+  section a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .id {
+    display: none;
+  }
 }
 </style>
