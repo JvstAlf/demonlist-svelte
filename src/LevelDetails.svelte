@@ -549,6 +549,7 @@ abbr:hover::after {
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+word-wrap:  break-word;
     z-index: 50;
     padding: 0;
     transition: opacity 0.2s ease-in-out;
@@ -559,8 +560,6 @@ abbr:hover::after {
     text-wrap: stable;
     width: 75vw;
     padding: 0.5rem;
-    border-radius: 1rem;
-    text-align: center;
     background-color: rgba(0, 32, 80, 0.5);
 }
 }
