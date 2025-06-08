@@ -93,9 +93,9 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
     {#if position != 1}
 
     <!-- <a href="../level/{position - 1}">&#11164;</a> -->
-    <a href="../level/{position - 1}"><</a>
+    <a href="../level/{position - 1}">&#60;</a>
     <h1>{demon.name}</h1>
-    <a href="../level/{position + 1}">></a>
+    <a href="../level/{position + 1}">&#62;</a>
     <!-- <a href="../level/{position + 1}">&#11166;</a> -->
 
     {:else}
