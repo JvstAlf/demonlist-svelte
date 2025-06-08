@@ -100,9 +100,9 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 
     {:else}
 
-    <a style="opacity: 0; pointer-events: none;" href="">&#11164;</a>
+    <a style="opacity: 0; pointer-events: none;" href="">&#60;</a>
     <h1>{demon.name}</h1>
-    <a href="../level/{position + 1}">&#11166;</a>
+    <a href="../level/{position + 1}">&#62;</a>
 
     {/if}
     </div>
