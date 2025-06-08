@@ -467,6 +467,7 @@ table img {
     .title h1 {
     font-size: 2.5rem;
     letter-spacing: normal;
+margin-bottom: 0.5rem
   }
   
   .title a {
