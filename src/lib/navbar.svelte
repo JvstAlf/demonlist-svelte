@@ -22,7 +22,6 @@
         padding: 0.5rem 2rem;
         align-items: center;
         justify-content: space-between;
-        border: 1px solid red;
     }
 
     navbar > img {
