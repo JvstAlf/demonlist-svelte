@@ -17,6 +17,13 @@ export default defineConfig({
     historyApiFallback: true
   },
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        stats: path.resolve(__dirname, 'public/stats/index.html'),
+        user: path.resolve(__dirname, 'public/user/index.html'),
+      },
+    },
+  },
 })
