@@ -92,15 +92,17 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
     <div class="title">
     {#if position != 1}
 
-    <a href="../level/{position - 1}">&#11164;</a>
+    <!-- <a href="../level/{position - 1}">&#11164;</a> -->
+    <a href="../level/{position - 1}">&#60;</a>
     <h1>{demon.name}</h1>
-    <a href="../level/{position + 1}">&#11166;</a>
+    <a href="../level/{position + 1}">&#62;</a>
+    <!-- <a href="../level/{position + 1}">&#11166;</a> -->
 
     {:else}
 
-    <a style="opacity: 0; pointer-events: none;" href="">&#11164;</a>
+    <a style="opacity: 0; pointer-events: none;" href="">&#60;</a>
     <h1>{demon.name}</h1>
-    <a href="../level/{position + 1}">&#11166;</a>
+    <a href="../level/{position + 1}">&#62;</a>
 
     {/if}
     </div>
@@ -463,13 +465,18 @@ table img {
 
 @media screen and (orientation: portrait) {
     .title h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: normal;
   }
   
   .title a {
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 0 1rem;
+}
+
+.title {
+width: 90%;
+margin-bottom: 1rem
 }
 
   h2 {
@@ -499,7 +506,7 @@ table {
 
 .records {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .records p {
@@ -533,6 +540,32 @@ iframe {
   padding: 0.5rem;
   align-items: center;
   justify-content: center;
+}
+
+abbr {
+    text-underline-offset: 4px;
+    content: '';
+}
+
+abbr:hover::after {
+    content: attr(data-creators);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+word-wrap:  break-word;
+    z-index: 50;
+    padding: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    font-size: 1rem;
+    color: #ffc229;
+    -webkit-text-fill-color: #ffc229;
+    text-wrap: stable;
+    width: 75vw;
+    padding: 0.5rem;
+    background-color: rgba(0, 32, 80, 0.5);
 }
 }
 </style>
