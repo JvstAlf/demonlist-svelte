@@ -9,8 +9,8 @@
     <img src={Icon} alt="Icon">
     <ul>
         <li><a href="../../"><img src={ListImg} alt="List"></a></li>
-        <li><a href="../../stats/"><img src={StatsImg} alt="Stats"></a></li>
-        <li><a href="../../user/"><img src={UserImg} alt="User"></a></li>
+        <li><a href="../../stats"><img src={StatsImg} alt="Stats"></a></li>
+        <li><a href="../../user"><img src={UserImg} alt="User"></a></li>
     </ul>
 </navbar>
 
